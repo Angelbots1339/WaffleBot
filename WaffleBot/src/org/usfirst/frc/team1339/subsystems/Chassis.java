@@ -6,13 +6,10 @@ import org.usfirst.frc.team1339.utils.Constants;
 
 import com.ctre.CANTalon;
 
-import edu.wpi.first.wpilibj.Solenoid;
-
 public class Chassis extends SubsystemBase{
 	
 	private CANTalon leftOne, leftTwo, rightOne, rightTwo;
-	private Solenoid shifter;
-	
+
 	private double mQuickStopAccumulator;
 	private double kTurnSensitivity = 1.0;
 	
@@ -21,20 +18,10 @@ public class Chassis extends SubsystemBase{
 		leftTwo = new CANTalon(Constants.chassisLeftTwo);
 		rightOne = new CANTalon(Constants.chassisRightOne);
 		rightTwo = new CANTalon(Constants.chassisRightTwo);
-		
-		shifter = new Solenoid(Constants.chassisShifter);
 	}
 	
 	public void initDefaultCommand(){
 		setDefaultCommand(new ArcadeDrive());
-	}
-	
-	public void openShifter(){
-		
-	}
-	
-	public void closeShifter(){
-		
 	}
 	
 	public void arcadeDrive(double throttle, double turn){

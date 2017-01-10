@@ -19,7 +19,8 @@ public class Constants {
 	public static int chassisRightOne = 2;
 	public static int chassisRightTwo = 3;
 	
-	public static int chassisShifter = 0;
+	public static int chassisShiftOut = 0;
+	public static int chassisShiftIn = 1;
 	
 	//XBox Mapping
 	public static int xboxPort = 0;
