@@ -8,7 +8,8 @@ public class HardwareAdapter{
 	
 	private Joystick xboxStick = new Joystick(Constants.xboxPort);
 	
-	private AngelButton aButton = new AngelButton(xboxStick, Constants.xboxAbutton);
+	private AngelButton aButton = new AngelButton(xboxStick, Constants.xboxAButton);
+	private AngelButton xButton = new AngelButton(xboxStick, Constants.xboxXButton);
 	private AngelButton rightBumper = new AngelButton(xboxStick, Constants.xboxRightBumper);
 	
 	public HardwareAdapter(){
@@ -17,6 +18,7 @@ public class HardwareAdapter{
 	
 	public void checkTriggers(){
 		aButton.toggle(new WheelDrive(), new ArcadeDrive());
+		xButton.toggle(new ShiftHigh(), new ShiftLow());
 	}
 	
 	public Joystick getXboxStick(){
@@ -24,6 +26,9 @@ public class HardwareAdapter{
 	}
 	public AngelButton getAButton(){
 		return aButton;
+	}
+	public AngelButton getXButton(){
+		return xButton;
 	}
 	public AngelButton getRightBumper(){
 		return rightBumper;

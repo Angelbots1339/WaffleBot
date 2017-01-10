@@ -32,10 +32,10 @@ public class Constants {
 	public static int xboxRightTrigger = 3;
 	public static int xboxLeftTrigger = 2;
 	
-	public static int xboxAbutton = 1;
-	public static int xboxBbutton = 2;
-	public static int xboxXbutton = 3;
-	public static int xboxYbutton = 4;
+	public static int xboxAButton = 1;
+	public static int xboxBButton = 2;
+	public static int xboxXButton = 3;
+	public static int xboxYButton = 4;
 	public static int xboxLeftBumper = 5;
 	public static int xboxRightBumper = 6;
 	public static int xboxViewButton = 7;
