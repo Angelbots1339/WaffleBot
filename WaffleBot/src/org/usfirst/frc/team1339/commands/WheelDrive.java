@@ -24,7 +24,7 @@ public class WheelDrive extends CommandBase{
 		double throttle = stick.getRawAxis(Constants.xboxLeftYAxis);
 		double turn = stick.getRawAxis(Constants.xboxRightXAxis);
 		
-		Robot.chassis.wheelDrive(throttle, turn, false);
+		Robot.chassis.wheelDrive(throttle, turn, Robot.HardwareAdapter.getRightBumper().get());
 	}
 	
 	public boolean isFinished(){
