@@ -14,10 +14,10 @@ public class Constants {
 	public static double maxCruiseSpeed;
 	
 	//Robot ID's
-	public static int chassisLeftOne = 0;
-	public static int chassisLeftTwo = 1;
-	public static int chassisRightOne = 2;
-	public static int chassisRightTwo = 3;
+	public static int chassisLeftOne = 3;
+	public static int chassisLeftTwo = 2;
+	public static int chassisRightOne = 1;
+	public static int chassisRightTwo = 0;
 	
 	public static int chassisShiftOut = 0;
 	public static int chassisShiftIn = 1;

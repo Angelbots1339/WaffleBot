@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class HardwareAdapter{
 	
+	public static SplineProfile splineProfile = new SplineProfile(0.0008, 0, 0, 0.5, 0.5);
+	
 	private Joystick xboxStick = new Joystick(Constants.xboxPort);
 	
 	private AngelButton aButton = new AngelButton(xboxStick, Constants.xboxAButton);
@@ -17,7 +19,7 @@ public class HardwareAdapter{
 	}
 	
 	public void checkTriggers(){
-		aButton.toggle(new WheelDrive(), new ArcadeDrive());
+		aButton.whenPressed(new Spline());
 		xButton.toggle(new ShiftHigh(), new ShiftLow());
 	}
 	

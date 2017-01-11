@@ -105,7 +105,8 @@ public class Looper {
 	 * @see SubsystemBase
 	 */
 	public void update(){
-		for(CommandBase command : commands){ //looping through command list
+		for(int x = 0; x < commands.size(); x++){ //looping through command list
+			CommandBase command = commands.get(x);
 			if(Timer.getFPGATimestamp() > command.getRunSpeed() + command.getLastTime()){ //checking time
 				if(!command.isInitialized()){
 					command.setInitialized(); //initialize command if not initialized already

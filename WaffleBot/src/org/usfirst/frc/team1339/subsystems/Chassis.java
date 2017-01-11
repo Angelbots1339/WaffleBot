@@ -2,6 +2,7 @@ package org.usfirst.frc.team1339.subsystems;
 
 import org.usfirst.frc.team1339.base.SubsystemBase;
 import org.usfirst.frc.team1339.commands.ArcadeDrive;
+import org.usfirst.frc.team1339.robot.Robot;
 import org.usfirst.frc.team1339.utils.Constants;
 
 import com.ctre.CANTalon;
@@ -46,17 +47,18 @@ public class Chassis extends SubsystemBase{
 	}
 	
 	private void setMotorValues(double left, double right){
-		leftOne.set(left);
-		leftTwo.set(left);
+		leftOne.set(-left);
+		leftTwo.set(-left);
 		rightOne.set(right);
 		rightTwo.set(right);
 	}
 
 	public void wheelDrive(double throttle, double turn, boolean isQuickTurn) {
+		turn *= -1;
+		
 		double overPower;
-
         double angularPower;
-
+        
         if (isQuickTurn) {
             if (Math.abs(throttle) < 0.2) {
                 double alpha = 0.1;
@@ -98,5 +100,13 @@ public class Chassis extends SubsystemBase{
         }
         
         setMotorValues(left, right);
+	}
+	
+	public void driveSpline() {
+		Robot.HardwareAdapter.splineProfile.calculate(0, 0);
+		double rightSpeed = Robot.HardwareAdapter.splineProfile.getRightOutput();
+		double leftSpeed = Robot.HardwareAdapter.splineProfile.getLeftOutput();
+		System.out.println(rightSpeed);
+		setMotorValues(leftSpeed, rightSpeed);
 	}
 }
